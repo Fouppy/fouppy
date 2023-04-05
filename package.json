@@ -15,7 +15,7 @@
   ],
   "license": "No license. All rights reserved.",
   "engines": {
-    "node": "18.15.0",
+    "node": "18.13.0",
     "npm": "9.5.0"
   },
   "scripts": {
