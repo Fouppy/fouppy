@@ -15,7 +15,7 @@
   ],
   "license": "No license. All rights reserved.",
   "engines": {
-    "node": "18.13.0",
+    "node": "18",
     "npm": "9.5.0"
   },
   "scripts": {
@@ -27,7 +27,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@sentry/nextjs": "^7.47.0",
+    "@sentry/nextjs": "7.47.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
