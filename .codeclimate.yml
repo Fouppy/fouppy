@@ -51,6 +51,11 @@ plugins:
         - .js
         - .ts
         - .tsx
+    checks:
+      simple-import-sort/exports:
+        enabled: false
+      simple-import-sort/imports:
+        enabled: false
 
 exclude_patterns:
   - ".github/"
