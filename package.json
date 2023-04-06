@@ -1,6 +1,6 @@
 {
   "name": "fouppy",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
       "email": "fred.honore@gmail.com"
     }
   ],
-  "license": "No license. All rights reserved.",
+  "license": "MIT",
   "engines": {
     "node": "18",
     "npm": "9.5.0"
@@ -24,6 +24,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "postinstall": "is-ci || husky install",
+    "semantic-release": "semantic-release",
     "start": "next start"
   },
   "dependencies": {
@@ -34,6 +35,11 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/github": "8.0.7",
+    "@semantic-release/npm": "10.0.2",
+    "@semantic-release/release-notes-generator": "10.0.3",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
@@ -46,6 +52,7 @@
     "is-ci": "3.0.1",
     "lint-staged": "13.2.0",
     "prettier": "2.8.7",
+    "semantic-release": "21.0.1",
     "typescript": "5.0.3"
   }
 }
