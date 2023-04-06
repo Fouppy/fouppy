@@ -1,7 +1,6 @@
 name: Log new release
-on:
-  release:
-    types: [published]
+
+on: release
 
 jobs:
   log:
