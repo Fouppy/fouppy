@@ -1,0 +1,22 @@
+version: "2"
+
+plugins:
+  eslint:
+    channel: "eslint-7"
+    enabled: true
+    config:
+      extensions:
+        - .js
+        - .ts
+        - .tsx
+    checks:
+      simple-import-sort/exports:
+        enabled: false
+      simple-import-sort/imports:
+        enabled: false
+
+exclude_patterns:
+  - ".github/"
+  - ".husky/"
+  - ".vscode/"
+  - "**/node_modules/"
