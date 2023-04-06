@@ -1,12 +1,19 @@
 name: Log new release
 
-on: release
+# on: release
+
+on:
+  workflow_run:
+    workflows: ["Publish release"]
+    types:
+      - completed
 
 jobs:
   log:
     runs-on: ubuntu-latest
     steps:
-      - uses: logflare/action@v1
+      - name: Send logs to LogFlare
+        uses: logflare/action@v1
         id: stats
         with:
           api_key: ${{ secrets.LOGFLARE_API_KEY }}
