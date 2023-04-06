@@ -1,7 +1,6 @@
 {
   "name": "fouppy",
   "version": "0.0.0-development",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/Fouppy/fouppy.git"
@@ -25,6 +24,7 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "postinstall": "is-ci || husky install",
+    "postversion": "echo ${nextRelease.version}",
     "semantic-release": "semantic-release",
     "start": "next start"
   },
