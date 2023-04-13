@@ -1,4 +1,3 @@
 {
-  "buildCommand": "turbo build",
-  "regions": ["cdg1"]
+  "buildCommand": "turbo build"
 }
