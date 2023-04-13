@@ -106,3 +106,4 @@ AUTHORS text
 *.pyc binary
 *.pdf binary
 *-lock.json binary
+*.lock binary
