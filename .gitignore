@@ -28,8 +28,11 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# vercel
+# Vercel
 .vercel
+
+# Turborepo
+.turbo
 
 # typescript
 *.tsbuildinfo
