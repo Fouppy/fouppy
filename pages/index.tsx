@@ -1,6 +1,9 @@
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import styles from "@/styles/Home.module.css";
 
@@ -10,7 +13,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 // ============================================================================
 
-const Home = () => {
+type Props = {};
+
+// ============================================================================
+
+const Home = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { t } = useTranslation("common");
+
   const linkOptions = {
     rel: "noopener noreferrer",
     target: "_blank",
@@ -20,7 +29,8 @@ const Home = () => {
     <>
       <Head>
         <title>Fouppy</title>
-        <meta content="Fouppy's portfolio" name="description" />
+        {/* @ts-ignore */}
+        <meta content={t("description")} name="description" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="/favicon.ico" rel="icon" />
       </Head>
@@ -87,6 +97,15 @@ const Home = () => {
     </>
   );
 };
+
+// ============================================================================
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? "en", ["common"])),
+  },
+  revalidate: 60,
+});
 
 // ============================================================================
 

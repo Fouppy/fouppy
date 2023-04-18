@@ -19,21 +19,27 @@ import NextErrorComponent from "next/error";
 
 // ============================================================================
 
-type ContextOrProps = {
-  req?: NextPageContext["req"];
-  res?: NextPageContext["res"];
+type Props = {
   err?: NextPageContext["err"] | string;
   pathname?: string;
+  req?: NextPageContext["req"];
+  res?: NextPageContext["res"];
   statusCode?: number;
 };
 
 // ============================================================================
 
-const CustomErrorComponent = (props: ContextOrProps) => {
-  return <NextErrorComponent statusCode={props.statusCode as number} />;
+const Error = ({ statusCode }: Props) => {
+  if (statusCode) {
+    return <NextErrorComponent statusCode={statusCode} />;
+  }
+
+  return <p>An error occurred on client</p>;
 };
 
-CustomErrorComponent.getInitialProps = async (contextData: ContextOrProps) => {
+// ============================================================================
+
+Error.getInitialProps = async (contextData: Props) => {
   // In case this is running in a serverless function, await this in order to give Sentry
   // time to send the error before the lambda exits
   await Sentry.captureUnderscoreErrorException(contextData);
@@ -44,4 +50,4 @@ CustomErrorComponent.getInitialProps = async (contextData: ContextOrProps) => {
 
 // ============================================================================
 
-export default CustomErrorComponent;
+export default Error;
