@@ -29,6 +29,7 @@ const Home = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     <>
       <Head>
         <title>Fouppy</title>
+        {/* @ts-ignore */}
         <meta content={t("description")} name="description" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="/favicon.ico" rel="icon" />
