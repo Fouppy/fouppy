@@ -7,5 +7,10 @@
   "editor.tabSize": 2,
   "search.exclude": {
     "yarn.lock": true
+  },
+  "i18n-ally.localesPaths": ["public/locales"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.extract.ignoredByFiles": {
+    "pages/_error.tsx": ["An error occurred on client"]
   }
 }

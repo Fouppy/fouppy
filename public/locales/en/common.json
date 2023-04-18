@@ -1,6 +1,6 @@
 {
   "description": "Fouppy's portfolio",
-  "error": "An error occurred on client.",
   "maintenance": "Coming soon™",
-  "notFound": "Error 404"
+  "notFound": "Error 404",
+  "title": "Fouppy"
 }
