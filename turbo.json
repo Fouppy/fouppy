@@ -2,12 +2,10 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        "!public/*.xml",
-        "!public/robots.txt"
-      ]
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "postbuild": {
+      "outputs": ["!public/*.xml", "!public/robots.txt"]
     },
     "lint": {}
   }
