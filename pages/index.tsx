@@ -36,7 +36,7 @@ const Home = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.description}>
+        {/* <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
@@ -55,30 +55,13 @@ const Home = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               />
             </a>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.center}>
-          <Image
-            alt="Next.js Logo"
-            className={styles.logo}
-            height={37}
-            priority
-            src="/next.svg"
-            width={180}
-          />
-
-          <div className={styles.thirteen}>
-            <Image
-              alt="13"
-              height={31}
-              priority
-              src="/thirteen.svg"
-              width={40}
-            />
-          </div>
+          <h1>{t("maintenance")}</h1>
         </div>
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a
             className={styles.card}
             href="https://nextjs.org/docs/"
@@ -92,7 +75,7 @@ const Home = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               Find in-depth information about Next.js features and&nbsp;API.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
     </>
   );
