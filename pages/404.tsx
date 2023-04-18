@@ -8,9 +8,7 @@ type Props = {};
 
 // ============================================================================
 
-const Maintenance = (
-  _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Custom404 = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation("common");
 
   return (
@@ -22,7 +20,7 @@ const Maintenance = (
         justifyContent: "center",
       }}
     >
-      <h1>{t("maintenance")}</h1>
+      <h1>{t("notFound")}</h1>
     </div>
   );
 };
@@ -38,4 +36,4 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
 
 // ============================================================================
 
-export default Maintenance;
+export default Custom404;

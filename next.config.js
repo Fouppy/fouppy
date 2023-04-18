@@ -4,8 +4,11 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 const { withSentryConfig } = require("@sentry/nextjs");
 
+const { i18n } = require("./next-i18next.config");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n,
   reactStrictMode: true,
 };
 
