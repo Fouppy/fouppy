@@ -32,7 +32,7 @@
     "@vercel/analytics": "1.0.0",
     "@vercel/edge-config": "0.1.9",
     "i18next": "22.4.15",
-    "next": "13.3.1",
+    "next": "13.3.4",
     "next-i18next": "13.2.2",
     "next-sitemap": "4.0.9",
     "react": "18.2.0",
