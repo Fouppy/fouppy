@@ -15,7 +15,7 @@
   "license": "MIT",
   "engines": {
     "node": "18",
-    "npm": "9.5.0"
+    "npm": "9.5.1"
   },
   "scripts": {
     "build": "next build",
@@ -28,9 +28,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.50.0",
-    "@vercel/analytics": "1.0.0",
-    "@vercel/edge-config": "0.1.9",
+    "@sentry/nextjs": "7.51.2",
+    "@vercel/analytics": "1.0.1",
+    "@vercel/edge-config": "0.1.10",
     "i18next": "22.4.15",
     "next": "13.3.4",
     "next-i18next": "13.2.2",
@@ -45,8 +45,8 @@
     "@semantic-release/github": "8.0.7",
     "@semantic-release/release-notes-generator": "11.0.1",
     "@types/node": "18.16.3",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.1",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "eslint-config-prettier": "8.8.0",
