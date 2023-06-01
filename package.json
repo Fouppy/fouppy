@@ -28,7 +28,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.52.1",
+    "@sentry/nextjs": "7.53.1",
     "@vercel/analytics": "1.0.1",
     "@vercel/edge-config": "0.1.10",
     "i18next": "22.5.0",
