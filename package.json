@@ -14,13 +14,13 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": "20.10.0",
+    "node": "20",
     "npm": "10.2.3"
   },
   "scripts": {
     "build": "next build",
     "clean": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "lint": "next lint",
     "postinstall": "is-ci || husky install",
     "semantic-release": "semantic-release",
