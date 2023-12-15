@@ -1,0 +1,12 @@
+{
+  "hash": "1ec5ef833283ebf987499e1f625407219e78056ccaaa4574413d7bba57cdef38",
+  "prompts": [],
+  "consistency": {
+    "english": {
+      "localLanguage": "english",
+      "commitFix": "fix(server): change port variable to uppercase",
+      "commitFeat": "feat(server): allow server to listen on specified port",
+      "commitDescription": "Change the variable 'port' to uppercase 'PORT' to fix a bug. Allow the server to listen on a port specified through the environment variable as a new feature."
+    }
+  }
+}
