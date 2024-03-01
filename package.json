@@ -46,7 +46,7 @@
     "@semantic-release/commit-analyzer": "11.1.0",
     "@semantic-release/github": "9.2.6",
     "@semantic-release/release-notes-generator": "12.1.0",
-    "@types/node": "20.11.23",
+    "@types/node": "20.11.24",
     "@types/react": "18.2.61",
     "@types/react-dom": "18.2.19",
     "eslint": "8.57.0",
