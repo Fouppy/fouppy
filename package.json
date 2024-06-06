@@ -17,6 +17,7 @@
     "node": "20",
     "npm": "10.2.4"
   },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "build": "next build",
     "clean": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn",
