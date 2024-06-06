@@ -10,6 +10,16 @@ const { i18n } = require("./next-i18next.config");
 const nextConfig = {
   i18n,
   reactStrictMode: true,
+  experimental: {
+    turbo: {
+      rules: {
+        "*.svg": {
+          loaders: ["@svgr/webpack"],
+          as: "*.js",
+        },
+      },
+    },
+  },
 };
 
 module.exports = nextConfig;
