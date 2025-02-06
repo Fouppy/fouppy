@@ -1,23 +1,14 @@
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  // initializeRecaptchaConfig,
-  onAuthStateChanged,
-  PhoneAuthProvider,
-  RecaptchaVerifier,
-  signInWithCredential,
-  UserCredential,
-} from "firebase/auth";
+import { getAuth, PhoneAuthProvider, RecaptchaVerifier } from "firebase/auth";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import { redirect, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect, useRef, useState } from "react";
 
 import styles from "@/styles/Home.module.css";
 
-// Here goes the firebase project config
 const firebaseConfig = {
   apiKey: "AIzaSyDszILQKGfE3piws1NDrUMMmctHdstgl1Q",
   authDomain: "bewifi-preview.firebaseapp.com",
@@ -29,12 +20,6 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
-
-function initializeAuthListener(): () => void {
-  return onAuthStateChanged(auth, async (user) => {
-    console.log("onAuthStateChanged", user);
-  });
-}
 
 // ============================================================================
 
@@ -66,18 +51,11 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const redirectUri = searchParams.get("redirect_uri");
 
   useEffect(() => {
-    const unsubscribe = initializeAuthListener();
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
-  useEffect(() => {
     if (!recaptchaVerifierRef.current) {
       recaptchaVerifierRef.current = new RecaptchaVerifier(
         auth,
         "recaptcha-container",
-        { size: "normal" }
+        { size: "invisible" }
       );
     }
 
@@ -141,7 +119,7 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
           recaptchaVerifierRef.current = new RecaptchaVerifier(
             auth,
             "recaptcha-container",
-            { size: "normal" }
+            { size: "invisible" }
           );
         }
       } catch (clearError) {
@@ -194,10 +172,11 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <link href="/favicon.ico" rel="icon" />
         <link href="/icon.ico" rel="icon" />
       </Head>
-      <div id="recaptcha-container"></div>
 
       <main className={styles.main}>
         <div className={styles.center}>
+          <div id="recaptcha-container"></div>
+
           {step === "phone" && (
             <div>
               <input
@@ -237,6 +216,12 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 Verify Code
               </button>
             </div>
+          )}
+
+          {error && (
+            <p className="text-red-500 text-sm mt-4 text-center animate-shake">
+              {error}
+            </p>
           )}
         </div>
       </main>
