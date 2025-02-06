@@ -165,7 +165,7 @@ const Login = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     try {
       window.location.assign(
-        `${redirectUri}?verification_id=${verificationId}&verification_code=${verificationCode}`
+        `${redirectUri}?verification_id=${verificationId}&verification_code=${verificationCode}&phone_number=${phoneNumber}`
       );
     } catch (err) {
       console.error("Verification error:", err);
