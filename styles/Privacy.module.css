@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+}
+
+.article {
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
+.article h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.article h2 {
+  font-size: 1.15rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.article p {
+  margin: 0.75rem 0;
+}
+
+.article a {
+  text-decoration: underline;
+}
+
+.article code {
+  font-family: var(--font-mono);
+}
+
+.updated {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
